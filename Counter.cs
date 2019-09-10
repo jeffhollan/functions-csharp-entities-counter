@@ -6,11 +6,9 @@ namespace Hollan.Function
 {
     public class Counter
     {
-        private readonly IDurableEntityContext _ctx;
         private readonly ILogger _log;
-        public Counter(IDurableEntityContext ctx, ILogger log)
+        public Counter(ILogger log)
         {
-            _ctx = ctx;
             _log = log;
         }
         public int Count = 0;
@@ -22,6 +20,6 @@ namespace Hollan.Function
         public static Task Run(
             [EntityTrigger] IDurableEntityContext ctx,
             ILogger log) 
-            => ctx.DispatchAsync<Counter>(ctx, log);
+            => ctx.DispatchAsync<Counter>(log);
     }
 }
