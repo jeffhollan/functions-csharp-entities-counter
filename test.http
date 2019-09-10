@@ -1,0 +1,7 @@
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/Counter/Jeff
+
+### Increment
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/Counter/Jeff?op=Increment
+
+### Decrement
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/Counter/Jeff?op=Decrement
