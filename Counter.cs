@@ -16,6 +16,7 @@ namespace Hollan.Function
         public int Count = 0;
         public void Increment() => Count++;
         public void Decrement() => Count--;
+        public void End() => Entity.Current.DestructOnExit();
 
         [FunctionName(nameof(Counter))]
         public static Task Run(

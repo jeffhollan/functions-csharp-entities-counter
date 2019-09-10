@@ -5,3 +5,6 @@ POST http://localhost:7071/runtime/webhooks/durabletask/entities/Counter/Jeff?op
 
 ### Decrement
 POST http://localhost:7071/runtime/webhooks/durabletask/entities/Counter/Jeff?op=Decrement
+
+### Destroy
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/Counter/Jeff?op=End
