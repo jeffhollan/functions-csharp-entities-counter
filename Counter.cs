@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Extensions.DurableTask;
 using Microsoft.Extensions.Logging;
 
 namespace Hollan.Function
@@ -14,7 +15,7 @@ namespace Hollan.Function
         public int Count = 0;
         public void Increment() => Count++;
         public void Decrement() => Count--;
-        public void End() => Entity.Current.DestructOnExit();
+        public void End() => Entity.Current.DeleteState();
 
         [FunctionName(nameof(Counter))]
         public static Task Run(
